@@ -8,14 +8,16 @@ mod day2;
 mod day3;
 
 fn main() {
-//    day1::part1(read_file("day1.txt"));
-//    day1::part2(read_file("day1.txt"));
+    let day1_input = day1::process_input(read_file("day1.txt"));
+    day1::part1(&day1_input);
+    day1::part2(&day1_input);
 
     day2::part1(read_file("day2.txt"));
     day2::part2(read_file("day2.txt"));
 
-//    day3::part1(read_file("day3.txt"));
-//    day3::part2(read_file("day3.txt"));
+    let day3_input = day3::process_input(read_file("day3.txt"));
+    day3::part1(&day3_input);
+    day3::part2(&day3_input);
 }
 
 pub fn read_file(path: &str) -> String {
