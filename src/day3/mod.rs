@@ -19,10 +19,10 @@ impl Rect {
     }
 }
 
-pub fn process_input(input: String) -> Vec<Rect> {
+pub fn run(input: String) {
     let re = regex::Regex::new(r"#(\d*) @ (\d*),(\d*): (\d*)x(\d*)").unwrap();
 
-    input.lines().map(|l| {
+    let data = input.lines().map(|l| {
         let caps = re.captures(l).unwrap();
 
         Rect {
@@ -32,10 +32,15 @@ pub fn process_input(input: String) -> Vec<Rect> {
             width: caps.get(4).unwrap().as_str().parse::<i64>().unwrap(),
             height: caps.get(5).unwrap().as_str().parse::<i64>().unwrap(),
         }
-    }).collect::<Vec<_>>()
+    }).collect::<Vec<_>>();
+
+    println!("Day 3");
+
+    part1(&data);
+    part2(&data);
 }
 
-pub fn part1(input: &[Rect]) {
+fn part1(input: &[Rect]) {
     let mut board = HashMap::new();
 
     for i in 0..input.len() {
@@ -49,7 +54,7 @@ pub fn part1(input: &[Rect]) {
     println!("{}", board.values().fold(0, |acc, b|  if *b { acc + 1} else {acc}));
 }
 
-pub fn part2(input: &[Rect]) {
+fn part2(input: &[Rect]) {
     for i in 0..input.len() {
         let mut found_overlap = false;
         for j in 0..input.len() {

@@ -6,18 +6,22 @@ use std::io::Read;
 mod day1;
 mod day2;
 mod day3;
+mod day4;
+mod day5;
+mod day6;
 
 fn main() {
-    let day1_input = day1::process_input(read_file("day1.txt"));
-    day1::part1(&day1_input);
-    day1::part2(&day1_input);
+//    day1::run(read_file("day1.txt"));
 
-    day2::part1(read_file("day2.txt"));
-    day2::part2(read_file("day2.txt"));
+//    day2::run(read_file("day2.txt"));
 
-    let day3_input = day3::process_input(read_file("day3.txt"));
-    day3::part1(&day3_input);
-    day3::part2(&day3_input);
+//    day3::run(read_file("day3.txt"));
+
+//    day4::run(read_file("day4.txt"));
+
+//    day5::run(read_file("day5.txt"));
+
+    day6::run(read_file("day6.txt"));
 }
 
 pub fn read_file(path: &str) -> String {

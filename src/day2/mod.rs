@@ -1,4 +1,10 @@
-pub fn part1(input: String) {
+pub fn run(input: String) {
+    println!("Day 2");
+    part1(&input);
+    part2(&input);
+}
+
+pub fn part1(input: &str) {
     let mut two = 0;
     let mut three = 0;
     let mut array;
@@ -24,7 +30,7 @@ pub fn part1(input: String) {
     println!("{}", two * three);
 }
 
-pub fn part2(input: String){
+pub fn part2(input: &str){
     for first in input.lines() {
         for sec in input.lines() {
             let mut diff = (0, 0);
