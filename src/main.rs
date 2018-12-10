@@ -24,7 +24,9 @@ fn main() {
 
 //    day8::run(read_file("day8.txt"));
 
-    day9::run(read_file("day9.txt"));
+//    day9::run(read_file("day9.txt"));
+
+    day10::run(read_file("day10.txt"));
 }
 
 pub fn read_file(path: &str) -> String {
