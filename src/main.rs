@@ -3,12 +3,9 @@
 use std::fs::File;
 use std::io::Read;
 
-mod day1;
-mod day2;
-mod day3;
-mod day4;
-mod day5;
-mod day6;
+mod days;
+
+use crate::days::*;
 
 fn main() {
 //    day1::run(read_file("day1.txt"));
@@ -21,7 +18,11 @@ fn main() {
 
 //    day5::run(read_file("day5.txt"));
 
-    day6::run(read_file("day6.txt"));
+//    day6::run(read_file("day6.txt"));
+
+//    day7::run(read_file("day7.txt"));
+
+    day8::run(read_file("day8.txt"));
 }
 
 pub fn read_file(path: &str) -> String {
